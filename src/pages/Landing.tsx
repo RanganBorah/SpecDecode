@@ -79,6 +79,14 @@ export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
         <span>{isMuted ? 'Unmute' : 'Mute'}</span>
       </button>
 
+      {/* GDG logo — small, tucked in the top-left corner */}
+      <img
+        src="/logos/gdg-logo.png"
+        alt="GDG on Campus VIT Vellore"
+        className="absolute top-5 left-5 z-20 h-8 sm:h-10 w-auto object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+      />
+
       {/* Social handles — vertical rail, one side of the page */}
       <div className="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-1">
         {SOCIAL_LINKS.map((social) => (
@@ -88,25 +96,19 @@ export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center space-y-6 py-24">
-        <div className="flex items-center justify-center gap-3">
-          <img
-            src="/logos/gdg-logo.png"
-            alt="GDG on Campus VIT Vellore"
-            className="h-9 sm:h-10 w-auto object-contain"
-            onError={(e) => { e.currentTarget.style.display = 'none'; }}
-          />
-          <span className="inline-block text-[11px] sm:text-xs tracking-widest uppercase text-red-400 font-semibold border border-red-800/60 bg-red-950/40 rounded-full px-4 py-1.5">
-            GDG on Campus VIT Vellore &bull; DevJams&rsquo;26
-          </span>
-          <img
-            src="/logos/devjams-logo.png"
-            alt="DevJams'26"
-            className="h-9 sm:h-10 w-auto object-contain"
-            onError={(e) => { e.currentTarget.style.display = 'none'; }}
-          />
-        </div>
+        <span className="inline-block text-[11px] sm:text-xs tracking-widest uppercase text-red-400 font-semibold border border-red-800/60 bg-red-950/40 rounded-full px-4 py-1.5">
+          GDG on Campus VIT Vellore &bull; DevJams&rsquo;26
+        </span>
 
         <TitleScene3D />
+
+        {/* DevJams logo — small, centered under the project name */}
+        <img
+          src="/logos/devjams-logo.png"
+          alt="DevJams'26"
+          className="mx-auto h-10 sm:h-12 w-auto object-contain -mt-4"
+          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+        />
 
         <p className="text-sm sm:text-base text-slate-300">
           Made by{' '}
