@@ -52,7 +52,7 @@ export const CompletionCard: React.FC<CompletionCardProps> = ({
         </div>
 
         <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs">
-          <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+          <Sparkles className="w-3.5 h-3.5 text-red-400" />
           <span>{callsSaved} Target Passes Saved</span>
         </div>
       </div>
@@ -116,7 +116,7 @@ export const CompletionCard: React.FC<CompletionCardProps> = ({
 
       {/* Explanatory takeaway */}
       <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 text-xs sm:text-sm text-slate-300 leading-relaxed">
-        <span className="text-indigo-400 font-semibold">&gt; Conclusion:</span> Speculative decoding reduced the number of target-model generation steps by <strong className="text-emerald-400 font-semibold">{Math.round((1 - (metrics.targetModelCalls || 20)/(metrics.estimatedStandardCalls || 100)) * 100)}%</strong> in this simulation without altering output quality.
+        <span className="text-red-400 font-semibold">&gt; Conclusion:</span> Speculative decoding reduced the number of target-model generation steps by <strong className="text-emerald-400 font-semibold">{Math.round((1 - (metrics.targetModelCalls || 20)/(metrics.estimatedStandardCalls || 100)) * 100)}%</strong> in this simulation without altering output quality.
       </div>
 
       {/* Actions */}
@@ -124,7 +124,7 @@ export const CompletionCard: React.FC<CompletionCardProps> = ({
         <button
           id="completion-run-again-btn"
           onClick={onRunAgain}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
         >
           <RotateCcw className="w-4 h-4" />
           <span>Run Again</span>

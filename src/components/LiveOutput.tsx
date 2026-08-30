@@ -44,7 +44,7 @@ export const LiveOutput: React.FC<LiveOutputProps> = ({
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
         <div className="flex items-center gap-2">
-          <FileText className="w-4 h-4 text-indigo-400" />
+          <FileText className="w-4 h-4 text-red-400" />
           <h3 className="text-sm font-semibold text-slate-200">
             Generated Response
           </h3>
@@ -71,7 +71,7 @@ export const LiveOutput: React.FC<LiveOutputProps> = ({
       <div className="space-y-1">
         <div className="flex justify-between items-center text-xs">
           <span className="text-slate-400 flex items-center gap-1.5 text-[11px]">
-            {isRunning && <span className="animate-spin text-indigo-400">&bull;</span>}
+            {isRunning && <span className="animate-spin text-red-400">&bull;</span>}
             {isCompleted ? 'Generation Complete' : isRunning ? 'Streaming tokens...' : 'Idle'}
           </span>
           <span className="text-slate-300 font-medium text-[11px] font-mono">
@@ -80,7 +80,7 @@ export const LiveOutput: React.FC<LiveOutputProps> = ({
         </div>
         <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
           <div
-            className="h-full bg-indigo-500 transition-all duration-300"
+            className="h-full bg-red-500 transition-all duration-300"
             style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }}
           />
         </div>
@@ -92,7 +92,7 @@ export const LiveOutput: React.FC<LiveOutputProps> = ({
           <div className="font-mono text-xs sm:text-sm text-slate-100 whitespace-pre-wrap leading-relaxed">
             {outputText}
             {isRunning && (
-              <span className="inline-block w-2 h-4 bg-indigo-400 ml-1 animate-pulse" />
+              <span className="inline-block w-2 h-4 bg-red-400 ml-1 animate-pulse" />
             )}
           </div>
         ) : (
@@ -108,7 +108,7 @@ export const LiveOutput: React.FC<LiveOutputProps> = ({
       {/* Bottom Footer Note */}
       <div className="flex items-center justify-between text-[11px] text-slate-500">
         <span>Verified by Target Model: <strong className="text-slate-300">100% Quality Equivalence</strong></span>
-        <span>Mode: <strong className="text-indigo-300">{mode.toUpperCase()}</strong></span>
+        <span>Mode: <strong className="text-red-300">{mode.toUpperCase()}</strong></span>
       </div>
 
     </div>

@@ -25,9 +25,9 @@ export const PromptInput: React.FC<PromptInputProps> = ({
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'Coding': return <FileCode className="w-3.5 h-3.5 text-indigo-400" />;
-      case 'Reasoning': return <Brain className="w-3.5 h-3.5 text-indigo-400" />;
-      default: return <Sparkles className="w-3.5 h-3.5 text-indigo-400" />;
+      case 'Coding': return <FileCode className="w-3.5 h-3.5 text-red-400" />;
+      case 'Reasoning': return <Brain className="w-3.5 h-3.5 text-red-400" />;
+      default: return <Sparkles className="w-3.5 h-3.5 text-red-400" />;
     }
   };
 
@@ -36,7 +36,7 @@ export const PromptInput: React.FC<PromptInputProps> = ({
       {/* Preset Chips */}
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs font-medium text-slate-400 flex items-center gap-1">
-          <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+          <Sparkles className="w-3.5 h-3.5 text-red-400" />
           Example Prompts:
         </span>
         {presetPrompts.map((preset) => {
@@ -62,10 +62,10 @@ export const PromptInput: React.FC<PromptInputProps> = ({
       </div>
 
       {/* Main Textarea */}
-      <div className="relative rounded-lg border border-slate-800 bg-slate-900 focus-within:border-indigo-500/60 transition-colors">
+      <div className="relative rounded-lg border border-slate-800 bg-slate-900 focus-within:border-red-500/60 transition-colors">
         <div className="flex items-center justify-between px-3.5 py-2 border-b border-slate-800 text-xs text-slate-400">
           <div className="flex items-center gap-2">
-            <Terminal className="w-3.5 h-3.5 text-indigo-400" />
+            <Terminal className="w-3.5 h-3.5 text-red-400" />
             <span className="text-[11px] text-slate-400">Prompt</span>
           </div>
           <span className="text-[11px] text-slate-500">
