@@ -1,6 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Volume2, VolumeX, ArrowRight } from 'lucide-react';
+import { Volume2, VolumeX, ArrowRight, Instagram, Linkedin, Github } from 'lucide-react';
 import { TitleScene3D } from '../components/TitleScene3D';
+import { SocialIcon3D } from '../components/SocialIcon3D';
+
+const SOCIAL_LINKS = [
+  { href: 'https://www.instagram.com/r4ngann_/?hl=en', label: 'Instagram', color: '#e1306c', icon: <Instagram className="w-5 h-5" /> },
+  { href: 'https://www.linkedin.com/in/rangan-pratik-borah-69957b375/', label: 'LinkedIn', color: '#0a66c2', icon: <Linkedin className="w-5 h-5" /> },
+  { href: 'https://github.com/RanganBorah', label: 'GitHub', color: '#e5e7eb', icon: <Github className="w-5 h-5" /> },
+];
 
 interface LandingProps {
   onEnter: () => void;
@@ -72,11 +79,32 @@ export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
         <span>{isMuted ? 'Unmute' : 'Mute'}</span>
       </button>
 
+      {/* Social handles — vertical rail, one side of the page */}
+      <div className="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-1">
+        {SOCIAL_LINKS.map((social) => (
+          <SocialIcon3D key={social.label} {...social} />
+        ))}
+      </div>
+
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center space-y-6 py-24">
-        <span className="inline-block text-[11px] sm:text-xs tracking-widest uppercase text-red-400 font-semibold border border-red-800/60 bg-red-950/40 rounded-full px-4 py-1.5">
-          GDG on Campus VIT Vellore &bull; DevJams&rsquo;26
-        </span>
+        <div className="flex items-center justify-center gap-3">
+          <img
+            src="/logos/gdg-logo.png"
+            alt="GDG on Campus VIT Vellore"
+            className="h-9 sm:h-10 w-auto object-contain"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+          <span className="inline-block text-[11px] sm:text-xs tracking-widest uppercase text-red-400 font-semibold border border-red-800/60 bg-red-950/40 rounded-full px-4 py-1.5">
+            GDG on Campus VIT Vellore &bull; DevJams&rsquo;26
+          </span>
+          <img
+            src="/logos/devjams-logo.png"
+            alt="DevJams'26"
+            className="h-9 sm:h-10 w-auto object-contain"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+        </div>
 
         <TitleScene3D />
 
