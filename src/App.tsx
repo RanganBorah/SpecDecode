@@ -3,6 +3,7 @@ import { PageTab } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { DemoModeModal } from './components/DemoModeModal';
+import { Landing } from './pages/Landing';
 import { Overview } from './pages/Overview';
 import { LiveDemo } from './pages/LiveDemo';
 import { Benchmark } from './pages/Benchmark';
@@ -17,6 +18,7 @@ import {
 } from './types';
 
 export default function App() {
+  const [hasEntered, setHasEntered] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<PageTab>('overview');
   const [isDemoModalOpen, setIsDemoModalOpen] = useState<boolean>(false);
   const [benchmarkData, setBenchmarkData] = useState<CentralBenchmarkData | null>(null);
@@ -69,6 +71,10 @@ export default function App() {
     setActiveTab(tab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (!hasEntered) {
+    return <Landing onEnter={() => setHasEntered(true)} />;
+  }
 
   if (isLoading || !benchmarkData) {
     return (
