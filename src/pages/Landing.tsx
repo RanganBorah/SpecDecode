@@ -4,9 +4,9 @@ import { TitleScene3D } from '../components/TitleScene3D';
 import { SocialIcon3D } from '../components/SocialIcon3D';
 
 const SOCIAL_LINKS = [
-  { href: 'https://www.instagram.com/r4ngann_/?hl=en', label: 'Instagram', color: '#e1306c', icon: <Instagram className="w-5 h-5" /> },
-  { href: 'https://www.linkedin.com/in/rangan-pratik-borah-69957b375/', label: 'LinkedIn', color: '#0a66c2', icon: <Linkedin className="w-5 h-5" /> },
-  { href: 'https://github.com/RanganBorah', label: 'GitHub', color: '#e5e7eb', icon: <Github className="w-5 h-5" /> },
+  { href: 'https://www.instagram.com/r4ngann_/?hl=en', label: 'Instagram', color: '#e1306c', icon: <Instagram className="w-8 h-8" /> },
+  { href: 'https://www.linkedin.com/in/rangan-pratik-borah-69957b375/', label: 'LinkedIn', color: '#0a66c2', icon: <Linkedin className="w-8 h-8" /> },
+  { href: 'https://github.com/RanganBorah', label: 'GitHub', color: '#e5e7eb', icon: <Github className="w-8 h-8" /> },
 ];
 
 interface LandingProps {
@@ -79,16 +79,16 @@ export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
         <span>{isMuted ? 'Unmute' : 'Mute'}</span>
       </button>
 
-      {/* GDG logo — small, tucked in the top-left corner */}
+      {/* GDG logo — tucked in the top-left corner */}
       <img
         src="/logos/gdg-logo.png"
         alt="GDG on Campus VIT Vellore"
-        className="absolute top-5 left-5 z-20 h-8 sm:h-10 w-auto object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+        className="absolute top-5 left-5 z-20 h-16 sm:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
         onError={(e) => { e.currentTarget.style.display = 'none'; }}
       />
 
       {/* Social handles — vertical rail, one side of the page */}
-      <div className="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-1">
+      <div className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-3">
         {SOCIAL_LINKS.map((social) => (
           <SocialIcon3D key={social.label} {...social} />
         ))}
@@ -102,11 +102,11 @@ export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
 
         <TitleScene3D />
 
-        {/* DevJams logo — small, centered under the project name */}
+        {/* DevJams logo — centered under the project name */}
         <img
           src="/logos/devjams-logo.png"
           alt="DevJams'26"
-          className="mx-auto h-10 sm:h-12 w-auto object-contain -mt-4"
+          className="mx-auto h-16 sm:h-20 lg:h-24 w-auto object-contain -mt-2"
           onError={(e) => { e.currentTarget.style.display = 'none'; }}
         />
 

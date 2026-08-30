@@ -43,7 +43,7 @@ const TitleMesh: React.FC = () => {
 
 export const TitleScene3D: React.FC = () => {
   return (
-    <div className="w-full h-48 sm:h-56 lg:h-72 cursor-default overflow-visible">
+    <div className="w-full h-64 sm:h-80 lg:h-[26rem] cursor-default overflow-visible">
       <Canvas camera={{ position: [0, 0, 9], fov: 42 }} dpr={[1, 2]}>
         <ambientLight intensity={0.55} />
         <pointLight position={[-4, 2, 4]} intensity={45} color="#ef4444" />
