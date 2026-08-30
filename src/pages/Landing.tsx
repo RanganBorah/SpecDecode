@@ -90,14 +90,11 @@ export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
           <span className="text-white font-semibold">Khushal Padshala</span>
         </p>
 
-        <div className="pt-4 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        <div className="pt-4 space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed">
           <p>
-            DevJams&rsquo;26 is GDG on Campus VIT Vellore&rsquo;s flagship 48-hour hackathon — the ninth edition
-            of a movement built for developers, designers, and dreamers who&rsquo;d rather build than sleep.
-            Over two relentless days, mentorship, ice-breakers, and back-to-back review rounds pushed one
-            spark of an idea into SpecDecode: real GPU-accelerated speculative decoding, running live, no
-            simulations. This is where ambitious ideas meet sleepless nights and come out the other side as
-            something real.
+            DevJams&rsquo;26 is GDG on Campus VIT Vellore&rsquo;s flagship 48-hour hackathon, and SpecDecode
+            is what came out of it: real GPU-accelerated speculative decoding, built from scratch, no
+            simulations.
           </p>
           <p className="text-slate-400 italic">
             And the board &amp; core team pulling this whole universe together? Just as cool as Spider-Man
