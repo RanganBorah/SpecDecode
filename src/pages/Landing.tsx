@@ -8,6 +8,19 @@ interface LandingProps {
 export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(false);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ rx: 0, ry: 0, shift: 0 });
+
+  const handleTitleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = titleRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const nx = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 .. 0.5
+    const ny = (e.clientY - rect.top) / rect.height - 0.5;
+    setTilt({ rx: ny * -22, ry: nx * 26, shift: nx * 10 });
+  };
+
+  const resetTitle = () => setTilt({ rx: 0, ry: 0, shift: 0 });
 
   useEffect(() => {
     const video = videoRef.current;
@@ -77,11 +90,45 @@ export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
           GDG on Campus VIT Vellore &bull; DevJams&rsquo;26
         </span>
 
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight italic">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500 not-italic">
-            SpecDecode
-          </span>
-        </h1>
+        <div
+          ref={titleRef}
+          onMouseMove={handleTitleMove}
+          onMouseLeave={resetTitle}
+          className="relative inline-block cursor-default select-none"
+          style={{ perspective: '900px' }}
+        >
+          <h1
+            className="relative text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight transition-transform duration-150 ease-out"
+            style={{
+              transform: `rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg)`,
+              transformStyle: 'preserve-3d',
+            }}
+          >
+            {/* Red anaglyph layer */}
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 text-red-500 mix-blend-screen"
+              style={{ transform: `translate3d(${-6 - tilt.shift}px, 2px, -20px)` }}
+            >
+              SpecDecode
+            </span>
+            {/* Blue anaglyph layer */}
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 text-blue-500 mix-blend-screen"
+              style={{ transform: `translate3d(${6 - tilt.shift}px, -2px, -20px)` }}
+            >
+              SpecDecode
+            </span>
+            {/* Front face */}
+            <span
+              className="relative text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-white to-blue-400"
+              style={{ transform: 'translateZ(10px)' }}
+            >
+              SpecDecode
+            </span>
+          </h1>
+        </div>
 
         <p className="text-sm sm:text-base text-slate-300">
           Made by{' '}
