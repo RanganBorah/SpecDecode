@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Volume2, VolumeX, ArrowRight } from 'lucide-react';
 
 interface LandingProps {
@@ -7,7 +7,33 @@ interface LandingProps {
 
 export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Browsers block autoplay with sound until the page has user engagement,
+    // so try unmuted first and fall back to muted + unmute-on-first-interaction.
+    video.muted = false;
+    video.play().catch(() => {
+      video.muted = true;
+      setIsMuted(true);
+      video.play().catch(() => {});
+
+      const unmuteOnInteraction = () => {
+        video.muted = false;
+        setIsMuted(false);
+        video.play().catch(() => {});
+      };
+      document.addEventListener('click', unmuteOnInteraction, { once: true });
+      document.addEventListener('keydown', unmuteOnInteraction, { once: true });
+      return () => {
+        document.removeEventListener('click', unmuteOnInteraction);
+        document.removeEventListener('keydown', unmuteOnInteraction);
+      };
+    });
+  }, []);
 
   const toggleSound = () => {
     const video = videoRef.current;
@@ -28,7 +54,6 @@ export const Landing: React.FC<LandingProps> = ({ onEnter }) => {
         src="/videos/landing-bg.mp4"
         autoPlay
         loop
-        muted
         playsInline
       />
 
