@@ -59,13 +59,13 @@ export const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ data }) => {
       <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-2 text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-xs">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <Sparkles className="w-3.5 h-3.5 text-red-400" />
             <span>Empirical Inference Evaluation</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             {data.comparisonSeries.length > 0
-              ? <>Speculative Decoding achieved <span className="text-indigo-400">{data.overviewMetrics.speedImprovement} measured speedup</span></>
-              : <>Run <span className="text-indigo-400">npm run benchmarks</span> to measure real results</>}
+              ? <>Speculative Decoding achieved <span className="text-red-400">{data.overviewMetrics.speedImprovement} measured speedup</span></>
+              : <>Run <span className="text-red-400">npm run benchmarks</span> to measure real results</>}
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl">
             {data.comparisonSeries.length > 0
@@ -84,7 +84,7 @@ export const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ data }) => {
           </div>
           <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
             <div
-              className="bg-indigo-500 h-full rounded-full"
+              className="bg-red-500 h-full rounded-full"
               style={{ width: `${data.overviewMetrics.acceptanceRate}%` }}
             />
           </div>
@@ -100,7 +100,7 @@ export const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ data }) => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
           <div>
             <div className="flex items-center gap-2">
-              <BarChart3 className="w-5 h-5 text-indigo-400" />
+              <BarChart3 className="w-5 h-5 text-red-400" />
               <h3 className="text-base font-semibold text-white tracking-tight">
                 Benchmark Comparison Across Workloads
               </h3>
@@ -191,7 +191,7 @@ export const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ data }) => {
         <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 space-y-4">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-indigo-400" />
+              <TrendingUp className="w-4 h-4 text-red-400" />
               <h3 className="text-sm font-semibold text-white tracking-tight">
                 Generation Speed Over Sequence Length
               </h3>
@@ -223,7 +223,7 @@ export const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ data }) => {
         <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 space-y-4">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <div className="flex items-center gap-2">
-              <Sliders className="w-4 h-4 text-indigo-400" />
+              <Sliders className="w-4 h-4 text-red-400" />
               <h3 className="text-sm font-semibold text-white tracking-tight">
                 Draft Tokens (γ) vs. Effective Speedup
               </h3>
@@ -256,7 +256,7 @@ export const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ data }) => {
       <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 space-y-4">
         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
           <div className="flex items-center gap-2">
-            <Cpu className="w-4 h-4 text-indigo-400" />
+            <Cpu className="w-4 h-4 text-red-400" />
             <h3 className="text-sm font-semibold text-white tracking-tight">
               Production Target / Draft Model Combinations
             </h3>
@@ -296,7 +296,7 @@ export const BenchmarkChart: React.FC<BenchmarkChartProps> = ({ data }) => {
       <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 flex items-start gap-3 text-xs text-slate-400">
         <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong className="text-slate-300">Data source:</strong> The summary banner and per-category comparison above are real measurements from <code className="text-indigo-300">npm run benchmarks</code> on this machine's own GPU. The sequence-length curve, γ-ablation curve, and model-pairing table below are illustrative reference points from published speculative decoding research (Leviathan et al., Chen et al.) — this project's benchmark script doesn't sweep those dimensions yet, so those sections stay empty until it does.
+          <strong className="text-slate-300">Data source:</strong> The summary banner and per-category comparison above are real measurements from <code className="text-red-300">npm run benchmarks</code> on this machine's own GPU. The sequence-length curve, γ-ablation curve, and model-pairing table below are illustrative reference points from published speculative decoding research (Leviathan et al., Chen et al.) — this project's benchmark script doesn't sweep those dimensions yet, so those sections stay empty until it does.
         </p>
       </div>
 

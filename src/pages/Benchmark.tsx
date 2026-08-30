@@ -19,7 +19,7 @@ export const Benchmark: React.FC<BenchmarkProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-5">
         <div>
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-slate-800 text-indigo-400">
+            <div className="p-2 rounded-lg bg-slate-800 text-red-400">
               <BarChart3 className="w-5 h-5" />
             </div>
             <div>
@@ -35,7 +35,7 @@ export const Benchmark: React.FC<BenchmarkProps> = ({
 
         <button
           onClick={() => onTabChange('demo')}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
+          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-red-600 hover:bg-red-500 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
         >
           <Zap className="w-4 h-4 fill-slate-950" />
           <span>Launch Live Playground</span>

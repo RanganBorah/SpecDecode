@@ -17,7 +17,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onTabChange }) =
       {/* 2. Mathematical Foundation of Speculative Decoding */}
       <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 sm:p-8 space-y-6">
         <div className="flex items-center gap-2.5 border-b border-slate-800 pb-4">
-          <div className="p-2 rounded-lg bg-slate-800 text-indigo-400">
+          <div className="p-2 rounded-lg bg-slate-800 text-red-400">
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
@@ -34,7 +34,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onTabChange }) =
 
           <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 space-y-3">
             <h4 className="font-semibold text-slate-200 font-mono flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-indigo-400"></span>
+              <span className="w-2 h-2 rounded-full bg-red-400"></span>
               Acceptance Criterion Formula
             </h4>
             <p className="leading-relaxed">
@@ -50,13 +50,13 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onTabChange }) =
 
           <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 space-y-3">
             <h4 className="font-semibold text-slate-200 font-mono flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-indigo-400"></span>
+              <span className="w-2 h-2 rounded-full bg-red-400"></span>
               Target Resampling on Rejection
             </h4>
             <p className="leading-relaxed">
               If candidate token <code className="text-slate-300">x</code> is rejected, the target model draws a replacement token from modified residual distribution:
             </p>
-            <div className="p-3 rounded bg-slate-900 border border-slate-800 font-mono text-center text-xs text-indigo-300 font-semibold">
+            <div className="p-3 rounded bg-slate-900 border border-slate-800 font-mono text-center text-xs text-red-300 font-semibold">
               p'(x) = max(0, p(x) - q(x)) / &Sigma; max(0, p(y) - q(y))
             </div>
             <p className="text-[11px] text-slate-400">
@@ -77,7 +77,7 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onTabChange }) =
 
           <button
             onClick={() => onTabChange('demo')}
-            className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-colors cursor-pointer"
+            className="shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg bg-red-600 hover:bg-red-500 text-white font-semibold text-xs transition-colors cursor-pointer"
           >
             <Zap className="w-3.5 h-3.5" />
             <span>Test in Playground</span>

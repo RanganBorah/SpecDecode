@@ -17,7 +17,7 @@ export const Architecture: React.FC<ArchitectureProps> = ({ onTabChange }) => {
       {/* 2. Deep Dive: Memory Bandwidth vs Tensor Compute */}
       <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 sm:p-8 space-y-6">
         <div className="flex items-center gap-2.5 border-b border-slate-800 pb-4">
-          <div className="p-2 rounded-lg bg-slate-800 text-indigo-400">
+          <div className="p-2 rounded-lg bg-slate-800 text-red-400">
             <Cpu className="w-5 h-5" />
           </div>
           <div>
@@ -67,7 +67,7 @@ export const Architecture: React.FC<ArchitectureProps> = ({ onTabChange }) => {
         {/* KV Cache Strategy Card */}
         <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 space-y-2 text-xs">
           <div className="flex items-center gap-2 text-slate-200 font-semibold">
-            <Database className="w-4 h-4 text-indigo-400" />
+            <Database className="w-4 h-4 text-red-400" />
             <span>KV Cache Tree Management &amp; PagedAttention</span>
           </div>
           <p className="text-slate-400 leading-relaxed">

@@ -24,7 +24,7 @@ export const ArchitectureDiagram: React.FC = () => {
       id: 'user',
       title: 'User Client',
       role: 'Prompt Submission & Token Streaming',
-      icon: <User className="w-5 h-5 text-indigo-400" />,
+      icon: <User className="w-5 h-5 text-red-400" />,
       desc: 'Dispatches prompts to the inference engine and receives streaming accelerated tokens in real-time.',
       specs: 'WebSocket / SSE Stream • React SPA'
     },
@@ -32,7 +32,7 @@ export const ArchitectureDiagram: React.FC = () => {
       id: 'frontend',
       title: 'React Visualizer',
       role: 'UI & Telemetry State Engine',
-      icon: <Monitor className="w-5 h-5 text-indigo-400" />,
+      icon: <Monitor className="w-5 h-5 text-red-400" />,
       desc: 'Controls sampling temperature, batch draft lengths (γ), and renders token-by-token verification diagnostics.',
       specs: 'Client State Manager • Framer & CSS Motion'
     },
@@ -40,7 +40,7 @@ export const ArchitectureDiagram: React.FC = () => {
       id: 'gateway',
       title: 'API Gateway',
       role: 'Inference Orchestrator',
-      icon: <Server className="w-5 h-5 text-indigo-400" />,
+      icon: <Server className="w-5 h-5 text-red-400" />,
       desc: 'Routes requests to the unified GPU memory cluster hosting both the target and draft model weights.',
       specs: 'gRPC / REST Gateway • PagedAttention Manager'
     },
@@ -48,7 +48,7 @@ export const ArchitectureDiagram: React.FC = () => {
       id: 'draft',
       title: 'Draft Model Engine (8B)',
       role: 'Candidate Token Proposer',
-      icon: <Zap className="w-5 h-5 text-indigo-400" />,
+      icon: <Zap className="w-5 h-5 text-blue-400" />,
       desc: 'Executes rapid autoregression to generate γ candidate tokens with minimal memory bandwidth consumption.',
       specs: '8B Parameters • ~3ms per token proposal'
     },
@@ -56,7 +56,7 @@ export const ArchitectureDiagram: React.FC = () => {
       id: 'target',
       title: 'Target Model Verifier (70B)',
       role: 'Ground Truth Parallel Verifier',
-      icon: <Cpu className="w-5 h-5 text-indigo-400" />,
+      icon: <Cpu className="w-5 h-5 text-red-400" />,
       desc: 'Evaluates entire draft candidate sequences in a single batched tensor forward pass on GPU tensor cores.',
       specs: '70B Parameters • 1 Forward Pass (~28ms)'
     },
@@ -64,7 +64,7 @@ export const ArchitectureDiagram: React.FC = () => {
       id: 'decoder',
       title: 'Speculative Decoder & Verifier',
       role: 'Distribution Alignment Algorithm',
-      icon: <Shuffle className="w-5 h-5 text-indigo-400" />,
+      icon: <Shuffle className="w-5 h-5 text-red-400" />,
       desc: 'Performs speculative sampling: accept tokens where P_target(x) >= P_draft(x); reject and resample otherwise.',
       specs: 'Zero-Quality-Loss Theorem (Leviathan 2023)'
     },
@@ -88,7 +88,7 @@ export const ArchitectureDiagram: React.FC = () => {
       id: 'output',
       title: 'Final Output & Telemetry',
       role: 'Accelerated Token Stream',
-      icon: <Activity className="w-5 h-5 text-indigo-400" />,
+      icon: <Activity className="w-5 h-5 text-red-400" />,
       desc: 'Emits complete verified token stream with live latency, TPS throughput, and speedup metrics.',
       specs: '1.8× Effective Throughput Speedup'
     }
@@ -103,7 +103,7 @@ export const ArchitectureDiagram: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-5">
         <div>
           <div className="flex items-center gap-2">
-            <Layers className="w-5 h-5 text-indigo-400" />
+            <Layers className="w-5 h-5 text-red-400" />
             <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
               SpecDecode System Architecture
             </h2>
@@ -133,13 +133,13 @@ export const ArchitectureDiagram: React.FC = () => {
               onClick={() => setActiveNode('user')}
               className={`p-4 rounded-lg border text-left transition-colors cursor-pointer ${
                 activeNode === 'user'
-                  ? 'bg-slate-950 border-indigo-500/50'
+                  ? 'bg-slate-950 border-red-500/50'
                   : 'bg-slate-950/60 border-slate-800 hover:border-slate-700'
               }`}
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-slate-800">
-                  <User className="w-5 h-5 text-indigo-400" />
+                  <User className="w-5 h-5 text-red-400" />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-medium">1. Client Layer</div>
@@ -152,13 +152,13 @@ export const ArchitectureDiagram: React.FC = () => {
               onClick={() => setActiveNode('frontend')}
               className={`p-4 rounded-lg border text-left transition-colors cursor-pointer ${
                 activeNode === 'frontend'
-                  ? 'bg-slate-950 border-indigo-500/50'
+                  ? 'bg-slate-950 border-red-500/50'
                   : 'bg-slate-950/60 border-slate-800 hover:border-slate-700'
               }`}
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-slate-800">
-                  <Monitor className="w-5 h-5 text-indigo-400" />
+                  <Monitor className="w-5 h-5 text-red-400" />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-medium">2. Dashboard Layer</div>
@@ -170,7 +170,7 @@ export const ArchitectureDiagram: React.FC = () => {
           </div>
 
           {/* Flow Connector Arrow */}
-          <div className="flex justify-center text-indigo-400">
+          <div className="flex justify-center text-red-400">
             <ArrowDown className="w-5 h-5 animate-bounce" />
           </div>
 
@@ -180,13 +180,13 @@ export const ArchitectureDiagram: React.FC = () => {
               onClick={() => setActiveNode('gateway')}
               className={`w-full p-4 rounded-lg border text-left transition-colors cursor-pointer ${
                 activeNode === 'gateway'
-                  ? 'bg-slate-950 border-indigo-500/50'
+                  ? 'bg-slate-950 border-red-500/50'
                   : 'bg-slate-950/60 border-slate-800 hover:border-slate-700'
               }`}
             >
               <div className="flex items-center gap-3 justify-center text-center">
                 <div className="p-2 rounded-lg bg-slate-800">
-                  <Server className="w-5 h-5 text-indigo-400" />
+                  <Server className="w-5 h-5 text-red-400" />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-medium">3. Orchestrator</div>
@@ -197,7 +197,7 @@ export const ArchitectureDiagram: React.FC = () => {
           </div>
 
           {/* Flow Connector Split */}
-          <div className="flex justify-center text-indigo-400">
+          <div className="flex justify-center text-red-400">
             <ArrowDown className="w-5 h-5" />
           </div>
 
@@ -209,13 +209,13 @@ export const ArchitectureDiagram: React.FC = () => {
               onClick={() => setActiveNode('draft')}
               className={`p-4 rounded-lg border text-left transition-colors cursor-pointer ${
                 activeNode === 'draft'
-                  ? 'bg-slate-950 border-indigo-500/60'
+                  ? 'bg-slate-950 border-blue-500/60'
                   : 'bg-slate-950/60 border-slate-800 hover:border-slate-700'
               }`}
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-slate-800">
-                  <Zap className="w-5 h-5 text-indigo-400" />
+                  <Zap className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-medium">Draft Model (8B)</div>
@@ -230,13 +230,13 @@ export const ArchitectureDiagram: React.FC = () => {
               onClick={() => setActiveNode('target')}
               className={`p-4 rounded-lg border text-left transition-colors cursor-pointer ${
                 activeNode === 'target'
-                  ? 'bg-slate-950 border-indigo-500/60'
+                  ? 'bg-slate-950 border-red-500/60'
                   : 'bg-slate-950/60 border-slate-800 hover:border-slate-700'
               }`}
             >
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-slate-800">
-                  <Cpu className="w-5 h-5 text-indigo-400" />
+                  <Cpu className="w-5 h-5 text-red-400" />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-medium">Target Model (70B)</div>
@@ -249,7 +249,7 @@ export const ArchitectureDiagram: React.FC = () => {
           </div>
 
           {/* Flow Connector Convergence */}
-          <div className="flex justify-center text-indigo-400">
+          <div className="flex justify-center text-red-400">
             <ArrowDown className="w-5 h-5" />
           </div>
 
@@ -259,13 +259,13 @@ export const ArchitectureDiagram: React.FC = () => {
               onClick={() => setActiveNode('decoder')}
               className={`w-full p-4 rounded-lg border text-left transition-colors cursor-pointer ${
                 activeNode === 'decoder'
-                  ? 'bg-slate-950 border-indigo-500/60'
+                  ? 'bg-slate-950 border-red-500/60'
                   : 'bg-slate-950/60 border-slate-800 hover:border-slate-700'
               }`}
             >
               <div className="flex items-center gap-3 justify-center text-center">
                 <div className="p-2 rounded-lg bg-slate-800">
-                  <Shuffle className="w-5 h-5 text-indigo-400" />
+                  <Shuffle className="w-5 h-5 text-red-400" />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-medium">Core Speculative Engine</div>
@@ -310,11 +310,11 @@ export const ArchitectureDiagram: React.FC = () => {
             <button
               onClick={() => setActiveNode('output')}
               className={`p-4 rounded-lg border text-center max-w-md w-full transition-colors cursor-pointer ${
-                activeNode === 'output' ? 'bg-slate-950 border-indigo-500/60' : 'bg-slate-950/60 border-slate-800'
+                activeNode === 'output' ? 'bg-slate-950 border-red-500/60' : 'bg-slate-950/60 border-slate-800'
               }`}
             >
               <div className="flex items-center justify-center gap-2 text-slate-200 font-semibold text-sm">
-                <Activity className="w-4 h-4 text-indigo-400" /> Final Verified Output &amp; Telemetry Stream
+                <Activity className="w-4 h-4 text-red-400" /> Final Verified Output &amp; Telemetry Stream
               </div>
               <p className="text-xs text-slate-500 mt-1 font-mono">
                 1.8× Effective Speedup Emitted to User
@@ -337,7 +337,7 @@ export const ArchitectureDiagram: React.FC = () => {
               <h3 className="text-base font-semibold text-white">
                 {selectedNodeInfo.title}
               </h3>
-              <p className="text-xs text-indigo-400">
+              <p className="text-xs text-red-400">
                 {selectedNodeInfo.role}
               </p>
             </div>

@@ -41,7 +41,7 @@ export const HowItWorks: React.FC = () => {
         <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 space-y-3 font-mono">
           <div className="flex items-center justify-between text-xs text-slate-300">
             <span className="flex items-center gap-1.5 font-semibold">
-              <Zap className="w-3.5 h-3.5 text-indigo-400" /> Draft Model (8B)
+              <Zap className="w-3.5 h-3.5 text-blue-400" /> Draft Model (8B)
             </span>
             <span className="text-slate-500">~3ms / step</span>
           </div>
@@ -69,7 +69,7 @@ export const HowItWorks: React.FC = () => {
         <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 space-y-3 font-mono">
           <div className="flex items-center justify-between text-xs text-slate-300">
             <span className="flex items-center gap-1.5 font-semibold">
-              <Cpu className="w-3.5 h-3.5 text-indigo-400" /> Target Model (70B) Parallel Verification
+              <Cpu className="w-3.5 h-3.5 text-red-400" /> Target Model (70B) Parallel Verification
             </span>
             <span className="text-slate-500">1 Forward Pass (~28ms)</span>
           </div>
@@ -142,8 +142,8 @@ export const HowItWorks: React.FC = () => {
               <X className="w-3 h-3" /> ultra
             </span>
             <span className="text-slate-500">&rarr;</span>
-            <span className="px-3 py-1 rounded-lg bg-indigo-950 border border-indigo-700 text-indigo-200 text-xs font-semibold flex items-center gap-1">
-              <Sparkles className="w-3 h-3 text-indigo-400" /> parallel
+            <span className="px-3 py-1 rounded-lg bg-red-950 border border-red-700 text-red-200 text-xs font-semibold flex items-center gap-1">
+              <Sparkles className="w-3 h-3 text-red-400" /> parallel
             </span>
           </div>
           <div className="text-[11px] text-slate-400 font-sans">
@@ -161,7 +161,7 @@ export const HowItWorks: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-5">
         <div>
           <div className="flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-indigo-400" />
+            <BookOpen className="w-5 h-5 text-red-400" />
             <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
               How Speculative Decoding Works
             </h2>
@@ -178,7 +178,7 @@ export const HowItWorks: React.FC = () => {
             className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-colors ${
               isPlaying
                 ? 'bg-amber-600 hover:bg-amber-500 text-white'
-                : 'bg-indigo-600 hover:bg-indigo-500 text-white'
+                : 'bg-red-600 hover:bg-red-500 text-white'
             }`}
           >
             {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
@@ -205,13 +205,13 @@ export const HowItWorks: React.FC = () => {
               onClick={() => { setActiveStep(step.id); setIsPlaying(false); }}
               className={`p-4 rounded-lg border text-left transition-colors cursor-pointer ${
                 isCurrent
-                  ? 'bg-slate-900 border-indigo-500/50'
+                  ? 'bg-slate-900 border-red-500/50'
                   : 'bg-slate-950 border-slate-800 hover:border-slate-700 opacity-75 hover:opacity-100'
               }`}
             >
               <div className="flex items-center justify-between text-xs mb-2">
                 <span className={`px-2 py-0.5 rounded font-semibold font-mono ${
-                  isCurrent ? 'bg-indigo-950 text-indigo-300 border border-indigo-700' : 'bg-slate-800 text-slate-400'
+                  isCurrent ? 'bg-red-950 text-red-300 border border-red-700' : 'bg-slate-800 text-slate-400'
                 }`}>
                   0{step.id + 1}
                 </span>
@@ -230,7 +230,7 @@ export const HowItWorks: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
           <div>
-            <span className="text-xs text-indigo-400 font-semibold">
+            <span className="text-xs text-red-400 font-semibold">
               Deep Dive &bull; Phase {activeStep + 1} of 4
             </span>
             <h3 className="text-xl font-semibold text-white mt-1">
@@ -253,7 +253,7 @@ export const HowItWorks: React.FC = () => {
         {/* Detailed Mathematical & Engineering Explanation */}
         <div className="p-4 rounded-lg bg-slate-950 border border-slate-800 space-y-2">
           <div className="text-xs font-semibold text-slate-200 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <Sparkles className="w-3.5 h-3.5 text-red-400" />
             Engineering Details:
           </div>
           <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
@@ -268,7 +268,7 @@ export const HowItWorks: React.FC = () => {
             className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-medium text-slate-200 transition-colors"
           >
             <span>Next Step ({((activeStep + 1) % 4) + 1}/4)</span>
-            <ArrowRight className="w-3.5 h-3.5 text-indigo-400" />
+            <ArrowRight className="w-3.5 h-3.5 text-red-400" />
           </button>
         </div>
 

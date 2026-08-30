@@ -44,7 +44,7 @@ export const AboutDetails: React.FC<AboutDetailsProps> = ({ onTabChange }) => {
       <div className="flex items-center justify-between border-b border-slate-800 pb-5">
         <div>
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-slate-800 text-indigo-400">
+            <div className="p-2 rounded-lg bg-slate-800 text-red-400">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
@@ -65,11 +65,11 @@ export const AboutDetails: React.FC<AboutDetailsProps> = ({ onTabChange }) => {
       {/* 2. Developer Backend Integration Guide */}
       <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 sm:p-8 space-y-4">
         <div className="flex items-center gap-2 text-slate-200 font-semibold text-sm">
-          <FileCode className="w-4 h-4 text-indigo-400" />
+          <FileCode className="w-4 h-4 text-red-400" />
           <span>Developer API Integration Blueprint (`src/services/api.ts`)</span>
         </div>
         <p className="text-xs text-slate-400 leading-relaxed">
-          This frontend application isolates all inference logic into a clean asynchronous interface. When ready to connect real GPU hardware, update <code className="text-indigo-300 font-mono">src/services/api.ts</code>:
+          This frontend application isolates all inference logic into a clean asynchronous interface. When ready to connect real GPU hardware, update <code className="text-red-300 font-mono">src/services/api.ts</code>:
         </p>
 
         <div className="rounded-lg bg-slate-950 border border-slate-800 p-4 font-mono text-xs text-slate-300 space-y-2 overflow-x-auto">
@@ -96,7 +96,7 @@ export const AboutDetails: React.FC<AboutDetailsProps> = ({ onTabChange }) => {
       {/* 3. Frequently Asked Questions */}
       <div className="rounded-xl border border-slate-800 bg-slate-900 p-6 sm:p-8 space-y-6">
         <div className="flex items-center gap-2 border-b border-slate-800 pb-4">
-          <HelpCircle className="w-5 h-5 text-indigo-400" />
+          <HelpCircle className="w-5 h-5 text-red-400" />
           <h3 className="text-lg font-semibold text-white">
             Frequently Asked Questions
           </h3>

@@ -71,7 +71,7 @@ export const DemoModeModal: React.FC<DemoModeModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-slate-800 pb-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-indigo-400">
+            <div className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-red-400">
               <Zap className="w-5 h-5" />
             </div>
             <div>
@@ -100,7 +100,7 @@ export const DemoModeModal: React.FC<DemoModeModalProps> = ({
         {/* Progress Bar */}
         <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
           <div
-            className="bg-indigo-500 h-full transition-all duration-1000"
+            className="bg-red-500 h-full transition-all duration-1000"
             style={{ width: `${(seconds / 20) * 100}%` }}
           />
         </div>
@@ -111,7 +111,7 @@ export const DemoModeModal: React.FC<DemoModeModalProps> = ({
           {/* Stage 1 (0-2s): Initializing */}
           {isStage1 && (
             <div className="space-y-3 animate-in fade-in">
-              <div className="inline-flex p-3 rounded-full bg-slate-800 text-indigo-400 animate-pulse">
+              <div className="inline-flex p-3 rounded-full bg-slate-800 text-red-400 animate-pulse">
                 <Cpu className="w-8 h-8" />
               </div>
               <h4 className="text-lg font-semibold text-white">Initializing Models &amp; Unified GPU Memory...</h4>
@@ -124,7 +124,7 @@ export const DemoModeModal: React.FC<DemoModeModalProps> = ({
           {/* Stage 2 (2-6s): Draft Generation */}
           {isStage2 && (
             <div className="space-y-3 animate-in fade-in">
-              <div className="inline-flex p-2.5 rounded-full bg-slate-800 text-indigo-400">
+              <div className="inline-flex p-2.5 rounded-full bg-slate-800 text-red-400">
                 <Zap className="w-6 h-6 animate-bounce" />
               </div>
               <h4 className="text-base font-semibold text-slate-200">Phase 1: Draft Model Generates 5 Candidate Tokens</h4>
@@ -144,7 +144,7 @@ export const DemoModeModal: React.FC<DemoModeModalProps> = ({
           {/* Stage 3 (6-10s): Target Verification */}
           {isStage3 && (
             <div className="space-y-3 animate-in fade-in">
-              <div className="inline-flex p-2.5 rounded-full bg-slate-800 text-indigo-400">
+              <div className="inline-flex p-2.5 rounded-full bg-slate-800 text-red-400">
                 <Cpu className="w-6 h-6 animate-spin" />
               </div>
               <h4 className="text-base font-semibold text-slate-200">Phase 2: Target Model (70B) Verifies All 5 Tokens in Parallel</h4>
@@ -185,7 +185,7 @@ export const DemoModeModal: React.FC<DemoModeModalProps> = ({
                 <span className="px-2.5 py-1 rounded bg-rose-950 border border-rose-700 text-rose-300 line-through">
                   patterns
                 </span>
-                <span className="px-2.5 py-1 rounded bg-indigo-950 border border-indigo-700 text-indigo-200 font-semibold flex items-center gap-1">
+                <span className="px-2.5 py-1 rounded bg-red-950 border border-red-700 text-red-200 font-semibold flex items-center gap-1">
                   <Sparkles className="w-3 h-3" /> data.
                 </span>
               </div>
@@ -198,7 +198,7 @@ export const DemoModeModal: React.FC<DemoModeModalProps> = ({
           {/* Stage 5 (13-16s): Metrics Update */}
           {isStage5 && (
             <div className="space-y-3 animate-in fade-in">
-              <div className="inline-flex p-2.5 rounded-full bg-slate-800 text-indigo-400">
+              <div className="inline-flex p-2.5 rounded-full bg-slate-800 text-red-400">
                 <Activity className="w-6 h-6" />
               </div>
               <h4 className="text-base font-semibold text-slate-200">Phase 4: Telemetry &amp; Throughput Computation</h4>
@@ -260,7 +260,7 @@ export const DemoModeModal: React.FC<DemoModeModalProps> = ({
 
           <button
             onClick={() => { onClose(); onJumpToPlayground(); }}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
           >
             <span>Open Interactive Playground</span>
             <ArrowRight className="w-4 h-4" />

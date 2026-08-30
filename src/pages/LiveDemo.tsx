@@ -184,7 +184,7 @@ export const LiveDemo: React.FC<LiveDemoProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-5">
         <div>
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-slate-800 text-indigo-400">
+            <div className="p-2 rounded-lg bg-slate-800 text-red-400">
               <Zap className="w-5 h-5" />
             </div>
             <div>
