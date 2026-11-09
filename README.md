@@ -1,6 +1,6 @@
 # SpecDecode
 
-**Real speculative decoding for LLMs, running live on a laptop GPU.**
+**Real speculative decoding for LLMs running live on a laptop GPU.**
 
 SpecDecode pairs a small, fast *draft* model with a larger *target* model and
 shows, token by token, how the draft's guesses get verified in parallel by the
